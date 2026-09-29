@@ -19,7 +19,7 @@ class Vector2 {
     }
 
     // maybe the first argument of the operators is guarantee to be an instance of the class by the javascript engine
-    // so a would always be a vector while b can be anything and needed to perform a manual type check in order to response accordingly
+    // so in this example a would always be a vector while b can be anything and needed to perform a manual type check in order to response accordingly (proceed with the operation/throw error/etc...)
 
     static [Symbol.add](a, b) {
         return new Vector2(a.x + b.x, a.y + b.y);
