@@ -1,3 +1,4 @@
+// an example of the possibily of operator overloading
 // as in the built-in Set class
 class Set {
     // existing codes
