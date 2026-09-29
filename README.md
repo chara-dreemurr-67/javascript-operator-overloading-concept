@@ -6,7 +6,7 @@ This repository contains concept code exploring what operator overloading in Jav
 
 ## Example
 
-[`example1.js`](example1.js) sketches a `Vector2` class with proposed hooks for addition, subtraction, multiplication (a dot product), division by a number, and equality. The `console.log` statements show the intended results; they are not a guarantee of what a standard JavaScript engine will produce.
+[`example1.js`](example1.js) sketches proposed operator hooks for `Vector2` addition, subtraction, multiplication by a number, vector dot products, division by a number, and equality/inequality. It also includes placeholders for strict equality and inequality hooks. The `console.log` statements show intended results; they are not a guarantee of what a standard JavaScript engine will produce.
 
 [`example2.js`](example2.js) sketches operator hooks for set union, intersection, difference, symmetric difference, and subset/superset checks, delegating to the corresponding `Set` methods. The operator syntax and hook symbols are conceptual; they are not available in standard JavaScript.
 

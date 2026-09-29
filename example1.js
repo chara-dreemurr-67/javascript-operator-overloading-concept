@@ -26,8 +26,12 @@ class Vector2 {
         return new Vector2(a.x - b.x, a.y - b.y);
     }
 
-    // this is dot product
     static [Symbol.multiply](a, b) {
+        // for vector * number
+        if(typeof b === "number")
+            return new Vector2(a.x * b + a.y * b);
+
+        // for calculating dot product, assuming b is a vector
         return a.x * b.x + a.y * b.y;
     }
 
