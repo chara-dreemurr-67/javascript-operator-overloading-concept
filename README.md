@@ -1,6 +1,6 @@
 # JavaScript Operator Overloading Concept
 
-This repository contains concept code exploring what operator overloading in JavaScript might look like. The general concept follows closely with JavaScript philosophy, with type checking being manual in the body of each operator. This concept is heavily inspired by the already built-in `Symbol.toPrimitive` (use to coerce a value to a primi) and `Symbol.hasInstance` (used to overload the `instanceof` operator).
+This repository contains concept code exploring what operator overloading in JavaScript might look like. The general concept follows closely with JavaScript philosophy, with type checking being manual in the body of each operator. This concept is heavily inspired by the already built-in `Symbol.toPrimitive` (use to coerce a value to a primitive) and `Symbol.hasInstance` (used to overload the `instanceof` operator).
 
 > **Important:** The code in this repository is illustrative and will not run as written in standard JavaScript. JavaScript does not provide the `Symbol.add`, `Symbol.subtract`, or related operator hooks shown here. The examples only work if a runtime, compiler, or transformation implements the concept with the same syntax and behavior described in the code.
 
