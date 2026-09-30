@@ -21,27 +21,33 @@ class Vector2 {
 
     // maybe the first argument of the operators is guarantee to be an instance of the class by the javascript engine
     // so in this example `a` would always be a vector while `b` can be anything and needed to perform a manual type check in order to response accordingly (proceed with the operation/throw error/etc...)
+    // although this example assumes that `b` is always of the right type(s)
 
-    static [Symbol.add](a, b) {
+    static [Symbol.addition](a, b) {
         return new Vector2(a.x + b.x, a.y + b.y);
     }
 
-    static [Symbol.subtract](a, b) {
+    static [Symbol.subtraction](a, b) {
         return new Vector2(a.x - b.x, a.y - b.y);
     }
 
-    static [Symbol.multiply](a, b) {
+    static [Symbol.multiplication](a, b) {
         // for vector * number
         if(typeof b === "number")
-            return new Vector2(a.x * b + a.y * b);
+            return new Vector2(a.x * b, a.y * b);
 
         // for calculating dot product, assuming `b` is a vector
         return a.x * b.x + a.y * b.y;
     }
 
     // with `a` as a vector, and b as a number
-    static [Symbol.divide](a, b) {
+    static [Symbol.division](a, b) {
         return new Vector2(a.x / b, a.y / b);
+    }
+
+    // for vector normalization, although an explicit `.normalize` method would be prefer for clarity
+    static [Symbol.bitwiseNot](a) {
+        return a / a.length;
     }
 
     static [Symbol.equality](a, b) {
@@ -59,20 +65,17 @@ class Vector2 {
 
     static [Symbol.strictEquality](a, b) { /* strict equality if needed */ }
     static [Symbol.strictInequality](a, b) { /* strict inequality if needed */ }
-
-    // another possible way to implement operator overloading (inspired by c++-style operator overloading) or just syntatic sugar that get converted back to Symbol hooks under the hood by the engine, applies to the other operators
-    // maybe overloadings are implicitly static so there will be no need for the static keyword every time
-    static operator +(a, b) {
-        return new Vector2(a.x + b.x, a.y + b.y);
-    }
 }
 
 const a = new Vector2(1, 10);
 const b = new Vector2(5, 11);
+const c = new Vector2(6, 6);
 
 console.log(a + b); // Vector2(6, 21)
 console.log(a - b); // Vector2(-4, -1)
 console.log(a * b); // 115
+console.log(a * 5); // Vector2(5, 50)
 console.log(a / 2); // Vector2(0.5, 5)
+console.log(~c); // roughly Vector2(0.707, 0.707)
 console.log(a == b); // false
 console.log(a != b); // true
